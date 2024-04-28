@@ -46,175 +46,204 @@ export class Job extends Model {
 
   @Column({
     type: DataType.STRING,
-    allowNull: true
+    allowNull: true,
+    defaultValue: "データなし"
   })
   status!: string;
 
   @Column({
     type: DataType.STRING,
-    allowNull: true
+    allowNull: true,
+    defaultValue: "データなし"
   })
   indeed!: string;
 
   @Column({
     type: DataType.STRING,
-    allowNull: true
+    allowNull: true,
+    defaultValue: "データなし"
   })
   porters!: string;
 
   @Column({
     type: DataType.STRING,
-    allowNull: true
+    allowNull: true,
+    defaultValue: "データなし"
   })
   porters_store_id!: string;
 
   @Column({
     type: DataType.STRING,
-    allowNull: true
+    allowNull: true,
+    defaultValue: "データなし"
   })
   store_name!: string;
 
   @Column({
     type: DataType.STRING,
-    allowNull: true
+    allowNull: true,
+    defaultValue: "データなし"
   })
   job_title!: string;
 
   @Column({
     type: DataType.TEXT,
-    allowNull: true
+    allowNull: true,
+    defaultValue: "データなし"
   })
   job_catchcopy!: string;
 
   @Column({
     type: DataType.STRING,
-    allowNull: true
+    allowNull: true,
+    defaultValue: "データなし"
   })
   address!: string;
 
   @Column({
     type: DataType.STRING,
-    allowNull: true
+    allowNull: true,
+    defaultValue: "データなし"
   })
   prefecture!: string;
 
   @Column({
     type: DataType.STRING,
-    allowNull: true
+    allowNull: true,
+    defaultValue: "データなし"
   })
   street!: string;
 
   @Column({
     type: DataType.STRING,
-    allowNull: true
+    allowNull: true,
+    defaultValue: "データなし"
   })
   building!: string;
 
   @Column({
     type: DataType.STRING,
-    allowNull: true
+    allowNull: true,
+    defaultValue: "データなし"
   })
   job_type!: string;
 
   @Column({
     type: DataType.STRING,
-    allowNull: true
+    allowNull: true,
+    defaultValue: "データなし"
   })
   job_salary_type!: string;
 
   @Column({
     type: DataType.INTEGER,
-    allowNull: true
+    allowNull: true,
+    defaultValue: 0
   })
   job_salary_min!: number;
 
   @Column({
     type: DataType.INTEGER,
-    allowNull: true
+    allowNull: true,
+    defaultValue: 0
   })
   job_salary_max!: number;
 
   @Column({
     type: DataType.STRING,
-    allowNull: true
+    allowNull: true,
+    defaultValue: "データなし"
   })
   job_salary_display!: string;
 
   @Column({
     type: DataType.STRING,
-    allowNull: true
+    allowNull: true,
+    defaultValue: "データなし"
   })
   job_fixed_overtime!: string;
 
   @Column({
     type: DataType.STRING,
-    allowNull: true
+    allowNull: true,
+    defaultValue: "データなし"
   })
   job_insurance!: string;
 
   @Column({
     type: DataType.STRING,
-    allowNull: true
+    allowNull: true,
+    defaultValue: "データなし"
   })
   job_trial_period!: string;
 
   @Column({
     type: DataType.TEXT,
-    allowNull: true
+    allowNull: true,
+    defaultValue: "データなし"
   })
   job_description!: string;
 
   @Column({
     type: DataType.TEXT,
-    allowNull: true
+    allowNull: true,
+    defaultValue: "データなし"
   })
   job_ideal_person!: string;
 
   @Column({
     type: DataType.TEXT,
-    allowNull: true
+    allowNull: true,
+    defaultValue: "データなし"
   })
   job_worktime!: string;
 
   @Column({
     type: DataType.TEXT,
-    allowNull: true
+    allowNull: true,
+    defaultValue: "データなし"
   })
   job_holiday!: string;
 
   @Column({
     type: DataType.STRING,
-    allowNull: true
+    allowNull: true,
+    defaultValue: "データなし"
   })
   job_address!: string;
 
   @Column({
     type: DataType.STRING,
-    allowNull: true
+    allowNull: true,
+    defaultValue: "データなし"
   })
   job_access!: string;
 
   @Column({
     type: DataType.STRING,
-    allowNull: true
+    allowNull: true,
+    defaultValue: "データなし"
   })
   job_salary!: string;
 
   @Column({
     type: DataType.TEXT,
-    allowNull: true
+    allowNull: true,
+    defaultValue: "データなし"
   })
   job_benefit!: string;
 
   @Column({
     type: DataType.TEXT,
-    allowNull: true
+    allowNull: true,
+    defaultValue: "データなし"
   })
   job_notes!: string;
 
   @Column({
     type: DataType.STRING,
-    allowNull: true
+    allowNull: true,
+    defaultValue: "データなし"
   })
   job_url!: string;
 }

@@ -2,7 +2,7 @@ import { IJob} from '../repositories/JobRepository'
 import {Job,JobI} from '../models/Job'
 
 export interface IJobService {
-  createJob(arg0: JobI): Promise<Job>
+  createJob(JobI:JobI): Promise<Job>
   findAll(): Promise<Job[]>
   findJobByPref(prefecture: string): Promise<Job | null>
 }

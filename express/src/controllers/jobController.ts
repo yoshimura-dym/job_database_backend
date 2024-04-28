@@ -14,22 +14,8 @@ export class JobController implements IJobController {
 
   async saveJob(req: Request, res: Response): Promise<Response<any, Record<string, any>> | undefined>
   {
-    const {job_id} = req.body as {job_id: string}
-    let exist: Job | null
-    try {
-      exist = await this.jobService.findJobByPref(job_id)
-    } catch (e) {
-      console.log(e)
-      return res.status(409).json({ message: "JobRepository already exists" });
-    }
-
-    if (exist !== null){
-      return res.status(409).json({ message: "JobRepository already exists" });
-    }
-
-    // 保存
     const job = await this.jobService.createJob(req.body)
-    res.json(job);
+    return res.json(job);
   }
 
   async getJobs(req: Request, res: Response)
