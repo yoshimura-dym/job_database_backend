@@ -1,19 +1,13 @@
-import {UserRepository} from '../repositories/UserRepository'
-import {HelloWorldService} from '../service/helloWorldService'
-import {HelloWorldController} from '../controllers/helloWorldController'
+import {JobRepository} from '../repositories/JobRepository'
 import {IWebHooks, WebHooks} from '../router'
-import {UserService} from '../service/userService'
-import {SecurityService} from '../service/SecurityService'
-import {UserController} from '../controllers/userController'
+import {JobService} from '../service/jobService'
+import {JobController} from '../controllers/jobController'
 
 export const injection = (): IWebHooks => {
-  const userRepository = UserRepository.builder()
-  const helloWorldService = HelloWorldService.builder(userRepository)
-  const helloWorldHandler = HelloWorldController.builder(helloWorldService)
+  const jobRepository = JobRepository.builder()
 
-  const userService = UserService.builder(userRepository)
-  const securityService = SecurityService.builder()
-  const userHandler = UserController.builder(userService, securityService)
+  const jobService = JobService.builder(jobRepository)
+  const jobHandler = JobController.builder(jobService)
   // ここでルーティングの設定
-  return WebHooks.builder( helloWorldHandler, userHandler )
+  return WebHooks.builder( jobHandler )
 }

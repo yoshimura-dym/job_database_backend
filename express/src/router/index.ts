@@ -1,6 +1,5 @@
 import { Router } from 'express'
-import {IHelloWorldController} from '../controllers/helloWorldController'
-import {IUserController} from '../controllers/userController'
+import {IJobController} from '../controllers/jobController'
 
 const router = Router()
 
@@ -10,25 +9,22 @@ export interface IWebHooks {
 
 export class WebHooks implements IWebHooks {
   constructor(
-      private helloWorldHandler: IHelloWorldController,
-      private userController: IUserController
+      private jobController: IJobController
   ) {
   }
 
   register(): Router
   {
-    router.get("/v1/hello", (req, res) => this.helloWorldHandler.getHelloWorld(req, res))
-    router.get("/v1/users", (req, res) => this.userController.getUsers(req, res))
-    router.post("/v1/users", (req, res) => this.userController.saveUser(req, res))
+    router.get("/v1/jobs", (req, res) => this.jobController.getJobs(req, res))
+    router.post("/v1/jobs", (req, res) => this.jobController.saveJob(req, res))
     return router
   }
 
 
   static builder(
-      helloWorldHandler: IHelloWorldController,
-      userController: IUserController
+      jobController: IJobController
   ): IWebHooks
   {
-    return new this(helloWorldHandler, userController);
+    return new this(jobController);
   }
 }
