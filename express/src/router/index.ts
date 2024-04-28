@@ -20,7 +20,6 @@ export class WebHooks implements IWebHooks {
     return router
   }
 
-
   static builder(
       jobController: IJobController
   ): IWebHooks

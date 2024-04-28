@@ -5,6 +5,7 @@ export interface IJobService {
   createJob(JobI:JobI): Promise<Job>
   findAll(): Promise<Job[]>
   findJobByPref(prefecture: string): Promise<Job | null>
+  findJobById(job_id: string): Promise<Job | null>
 }
 
 export class JobService implements IJobService
@@ -27,7 +28,11 @@ export class JobService implements IJobService
   {
     return await this.JobRepository.findJobByPref(prefecture)
   }
-
+  
+  async findJobById(job_id: string): Promise<Job | null>
+  {
+    return await this.JobRepository.findJobByPref(job_id)
+  }
   static builder(repository: IJob): IJobService
   {
     return new this(repository)

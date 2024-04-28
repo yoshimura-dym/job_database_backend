@@ -7,6 +7,7 @@ export type CustomPick<P, K extends keyof P> = {
 export interface IJob {
   createJob(data: JobI): Promise<Job>
   findJobByPref(prefecture: string): Promise<Job | null>
+  findJobById(job_id: string): Promise<Job | null>
   findAllJob(): Promise<Job[]>
 }
 
@@ -20,7 +21,11 @@ export class JobRepository implements IJob {
   {
     return await Job.findOne({ where: { prefecture: prefecture }})
   }
-
+  
+  async findJobById(job_id: string): Promise<Job | null>
+  {
+    return await Job.findOne({ where: { job_id: job_id }})
+  }
   async findAllJob(): Promise<Job[]>
   {
     return await Job.findAll()
